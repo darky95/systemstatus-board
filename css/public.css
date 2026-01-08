@@ -1,0 +1,294 @@
+/* Öffentliche Ansicht - Zusätzliche Styles */
+
+.public-page {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    min-height: 100vh;
+}
+
+.public-header {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem 0;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.public-header h1 {
+    color: var(--dark-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.last-update {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.public-stats {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.public-stats > .stat-card {
+    width: 100%;
+    max-width: 100%;
+}
+
+.public-stats .stat-card {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.public-stats .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.public-stats .stat-card .stat-value {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    display: block;
+}
+
+.public-stats .stat-card .stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    display: block;
+}
+
+.public-stats .stat-card.status-normal .stat-value {
+    color: var(--success-color);
+}
+
+.public-stats .stat-card.status-eingeschraenkt .stat-value {
+    color: var(--warning-color);
+}
+
+.public-stats .stat-card.status-wartung .stat-value {
+    color: var(--info-color);
+}
+
+.public-stats .stat-card.status-gestoert .stat-value {
+    color: var(--danger-color);
+}
+
+.status-legend {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.status-legend h2 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+}
+
+.legend-label {
+    color: var(--text-color);
+}
+
+.device-tree,
+.device-table-view {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.device-tree h2,
+.device-table-view h2 {
+    margin-bottom: 1.5rem;
+    color: var(--dark-color);
+}
+
+/* Tabellenformatierung für Public-Seite */
+.public-table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.public-table thead {
+    background-color: var(--dark-color);
+    color: white;
+}
+
+.public-table th,
+.public-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.public-table tbody tr:hover {
+    background-color: var(--light-color);
+}
+
+.public-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.device-name-cell {
+    position: relative;
+}
+
+.hierarchy-indicator {
+    color: var(--text-muted);
+    margin-right: 0.5rem;
+    font-weight: normal;
+}
+
+.device-item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--border-color);
+}
+
+.device-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.device-status {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 2px rgba(255,255,255,0.8);
+}
+
+.device-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    flex: 1;
+}
+
+.device-status-label {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+}
+
+.device-note {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding-left: 1.75rem;
+}
+
+.device-updated {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    padding-left: 1.75rem;
+}
+
+.no-devices {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 2rem;
+}
+
+.public-footer {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 0;
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .public-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .public-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .public-stats .stat-card {
+        padding: 0.75rem;
+    }
+    
+    .public-stats .stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .public-stats .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .legend-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .public-table {
+        font-size: 0.875rem;
+    }
+    
+    .public-table th,
+    .public-table td {
+        padding: 0.5rem;
+    }
+    
+    .public-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
