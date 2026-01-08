@@ -29,7 +29,16 @@ Dieses Verzeichnis enth√§lt verschiedene einbettbare Darstellungsformen der Ger√
 ### 1. Iframe-Einbindung (Empfohlen)
 ```html
 <!-- Status Cards -->
-<iframe src="http://IHRE-DOMAIN/status5/public/embed/status-cards.php" 
+<!-- Produktion (Direkt unter Domain) -->
+<iframe src="https://IHRE-DOMAIN.DE/public/embed/status-cards.php" 
+        width="300" 
+        height="200" 
+        frameborder="0" 
+        scrolling="no">
+</iframe>
+
+<!-- Entwicklung (im Unterverzeichnis) -->
+<iframe src="http://localhost/status5/public/embed/status-cards.php" 
         width="300" 
         height="200" 
         frameborder="0" 
@@ -37,7 +46,16 @@ Dieses Verzeichnis enth√§lt verschiedene einbettbare Darstellungsformen der Ger√
 </iframe>
 
 <!-- Compact Sidebar -->
-<iframe src="http://IHRE-DOMAIN/status5/public/embed/status-sidebar.php" 
+<!-- Produktion (Direkt unter Domain) -->
+<iframe src="https://IHRE-DOMAIN.DE/public/embed/status-sidebar.php" 
+        width="120" 
+        height="180" 
+        frameborder="0" 
+        scrolling="no">
+</iframe>
+
+<!-- Entwicklung (im Unterverzeichnis) -->
+<iframe src="http://localhost/status5/public/embed/status-sidebar.php" 
         width="120" 
         height="180" 
         frameborder="0" 
@@ -45,7 +63,16 @@ Dieses Verzeichnis enth√§lt verschiedene einbettbare Darstellungsformen der Ger√
 </iframe>
 
 <!-- Status Summary -->
-<iframe src="http://IHRE-DOMAIN/status5/public/embed/status-summary.php" 
+<!-- Produktion (Direkt unter Domain) -->
+<iframe src="https://IHRE-DOMAIN.DE/public/embed/status-summary.php" 
+        width="300" 
+        height="80" 
+        frameborder="0" 
+        scrolling="no">
+</iframe>
+
+<!-- Entwicklung (im Unterverzeichnis) -->
+<iframe src="http://localhost/status5/public/embed/status-summary.php" 
         width="300" 
         height="80" 
         frameborder="0" 
@@ -53,7 +80,16 @@ Dieses Verzeichnis enth√§lt verschiedene einbettbare Darstellungsformen der Ger√
 </iframe>
 
 <!-- Detailed Status -->
-<iframe src="http://IHRE-DOMAIN/status5/public/embed/detailed-status.php" 
+<!-- Produktion (Direkt unter Domain) -->
+<iframe src="https://IHRE-DOMAIN.DE/public/embed/detailed-status.php" 
+        width="350" 
+        height="300" 
+        frameborder="0" 
+        scrolling="no">
+</iframe>
+
+<!-- Entwicklung (im Unterverzeichnis) -->
+<iframe src="http://localhost/status5/public/embed/detailed-status.php" 
         width="350" 
         height="300" 
         frameborder="0" 
@@ -67,12 +103,22 @@ Dieses Verzeichnis enth√§lt verschiedene einbettbare Darstellungsformen der Ger√
 
 <script>
 // Dynamisches Laden eines Widgets
-fetch('http://IHRE-DOMAIN/status5/public/embed/status-summary.php')
+
+// Produktion (Direkt unter Domain)
+fetch('https://IHRE-DOMAIN.DE/public/embed/status-summary.php')
     .then(response => response.text())
     .then(html => {
         document.getElementById('status-widget').innerHTML = html;
     })
     .catch(error => console.error('Fehler:', error));
+
+// Entwicklung (im Unterverzeichnis)
+// fetch('http://localhost/status5/public/embed/status-summary.php')
+//     .then(response => response.text())
+//     .then(html => {
+//         document.getElementById('status-widget').innerHTML = html;
+//     })
+//     .catch(error => console.error('Fehler:', error));
 </script>
 ```
 

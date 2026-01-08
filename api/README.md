@@ -21,7 +21,15 @@ Alle Anfragen benötigen einen gültigen API-Key im Header oder Body.
 
 ### Content-Type: application/x-www-form-urlencoded
 ```bash
-curl -X POST "http://IHRE-DOMAIN/status5/api/status/update.php" \
+# Produktion (Direkt unter Domain)
+curl -X POST "https://IHRE-DOMAIN.DE/api/status/update.php" \
+  -d "api_key=IHRE_API_KEY" \
+  -d "device_key=GERAETE_KEY" \
+  -d "status=normal" \
+  -d "note=Optionale Notiz"
+
+# Entwicklung (lokal im Unterverzeichnis)
+curl -X POST "http://localhost/status5/api/status/update.php" \
   -d "api_key=IHRE_API_KEY" \
   -d "device_key=GERAETE_KEY" \
   -d "status=normal" \
@@ -30,7 +38,18 @@ curl -X POST "http://IHRE-DOMAIN/status5/api/status/update.php" \
 
 ### Content-Type: application/json
 ```bash
-curl -X POST "http://IHRE-DOMAIN/status5/api/status/update.php" \
+# Produktion (Direkt unter Domain)
+curl -X POST "https://IHRE-DOMAIN.DE/api/status/update.php" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "api_key": "IHRE_API_KEY",
+    "device_key": "GERAETE_KEY",
+    "status": "gestoert",
+    "note": "Serverausfall erkannt"
+  }'
+
+# Entwicklung (lokal im Unterverzeichnis)
+curl -X POST "http://localhost/status5/api/status/update.php" \
   -H "Content-Type: application/json" \
   -d '{
     "api_key": "IHRE_API_KEY",
@@ -95,7 +114,15 @@ DEVICE_KEY="webserver_01"
 STATUS="gestoert"
 NOTE="Automatischer Check fehlgeschlagen"
 
-curl -X POST "http://ihre-domain.de/status5/api/status/update.php" \
+# Produktion (Direkt unter Domain)
+curl -X POST "https://IHRE-DOMAIN.DE/api/status/update.php" \
+  -d "api_key=$API_KEY" \
+  -d "device_key=$DEVICE_KEY" \
+  -d "status=$STATUS" \
+  -d "note=$NOTE"
+
+# Entwicklung (lokal im Unterverzeichnis)
+curl -X POST "http://localhost/status5/api/status/update.php" \
   -d "api_key=$API_KEY" \
   -d "device_key=$DEVICE_KEY" \
   -d "status=$STATUS" \
@@ -106,7 +133,12 @@ curl -X POST "http://ihre-domain.de/status5/api/status/update.php" \
 ```python
 import requests
 
-url = "http://ihre-domain.de/status5/api/status/update.php"
+# Produktion (Direkt unter Domain)
+url = "https://IHRE-DOMAIN.DE/api/status/update.php"
+
+# Entwicklung (lokal im Unterverzeichnis)
+# url = "http://localhost/status5/api/status/update.php"
+
 data = {
     "api_key": "ihre_api_key",
     "device_key": "datenbank_server",
@@ -122,7 +154,12 @@ print(result)
 ### PHP
 ```php
 <?php
-$url = "http://ihre-domain.de/status5/api/status/update.php";
+// Produktion (Direkt unter Domain)
+$url = "https://IHRE-DOMAIN.DE/api/status/update.php";
+
+// Entwicklung (lokal im Unterverzeichnis)
+// $url = "http://localhost/status5/api/status/update.php";
+
 $data = [
     "api_key" => "ihre_api_key",
     "device_key" => "mail_server",
@@ -147,7 +184,11 @@ print_r($response);
 ### PowerShell
 ```powershell
 # Variablen definieren
-$ApiUrl = "http://ihre-domain.de/status5/api/status/update.php"
++# Produktion (Direkt unter Domain)
++$ApiUrl = "https://IHRE-DOMAIN.DE/api/status/update.php"
++
++# Entwicklung (lokal im Unterverzeichnis)
++# $ApiUrl = "http://localhost/status5/api/status/update.php"
 $ApiKey = "ihre_api_key"
 $DeviceKey = "webserver_01"
 $Status = "gestoert"
